@@ -1,0 +1,24 @@
+Adding Pages
+  # Add two new pages to the Phoenix project. One will be a purely static page and the other will take part of the path from the URL as input and pass it to a template for viewing. Along the way, we'll get acquainted with the building blocks of a Phoenix project: the router, controllers, views, and templates.
+
+A New Route
+  # Routes map unique HTTP verb / path pairs to controller / action pairs that will handle them. Phoenix generates a router file for us in new applications in lib / hello_web / router.ex.
+  # The first thing we must do to create that page is define a path for it.
+    get "/ hello", HelloController,: index
+
+A New Controller
+  # Controllers are Elixir modules and actions are Elixir functions defined on them. The purpose of actions is to collect data and perform the tasks required for rendering.
+  # Create the new controller in lib / hello_web / controllers / hello_controller.ex
+  # All controller actions take two arguments. The first is with a structure that contains a ton of data about the request. The second is params, what are the parameters of the request. Here, we are not using params and we avoid compiler warnings by adding the _ header.
+  # The core of this action is render conn, "index.html". This tells Phoenix to find a template called index.html.ee and render it.
+  # The modules responsible for rendering are views.
+
+A New View
+  # Phoenix sights have several important jobs. They represent templates. They also act as a presentation layer for the controller's raw data, preparing it for use in a template.
+  # In order to make templates for our HelloController, we need a HelloView. Names are important here - the first part of the view and controller names must match.
+
+A New Template
+  # Phoenix templates are just that, templates in which data can be processed. The standard template engine that Phoenix uses is EEx.
+  # Templates are scoped to a view, scoped to the controller.
+  # Phoenix creates a lib / hello_web / templates directory where we can put all of these.
+  # a hello directory must be created that contains the index.html.eex
